@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { GradientText } from './GradientText'
+import { TextInput } from "../pages/TextInput";
 
 const Home: NextPage = () => {
   return (
@@ -12,9 +14,22 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="text-3xl font-bold underline">Yukthi Isuranga</h1>
+      <GradientText
+        text="Yukthi Isuranga"
+        h1Style=""
+        textStyle="italic text-9xl	"
+      />
 
-      <main className={styles.main}>
+      {/* <textField name="name" placeholder="yukthi isuranga" inputStyle="" /> */}
+      <TextInput
+        lable="Full Name"
+        placeholder="yukthi isuranga"
+        lableStyle="text-xl 	"
+        inputStyle="text-xl	"
+        id="fname"
+      />
+
+      {/* <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -66,7 +81,7 @@ const Home: NextPage = () => {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }
