@@ -14,20 +14,22 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <GradientText
-        text="Yukthi Isuranga"
-        h1Style=""
-        textStyle="italic text-9xl	"
-      />
+      <div className="grid grid-cols-3 ">
+        <GradientText
+          text="Yukthi Isuranga"
+          h1Style=" col-span-3	"
+          textStyle="italic text-9xl	"
+        />
 
-      {/* <textField name="name" placeholder="yukthi isuranga" inputStyle="" /> */}
-      <TextInput
-        lable="Full Name"
-        placeholder="yukthi isuranga"
-        lableStyle="text-xl 	"
-        inputStyle="text-xl	"
-        id="fname"
-      />
+        {/* <textField name="name" placeholder="yukthi isuranga" inputStyle="" /> */}
+        <TextInput
+          lable="Full Name"
+          placeholder="yukthi isuranga"
+          lableStyle="text-xl 	"
+          inputStyle="text-xl	"
+          id="fname"
+        />
+      </div>
 
       {/* <main className={styles.main}>
         <h1 className={styles.title}>

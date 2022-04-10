@@ -31,9 +31,15 @@ export const TextInput = ({
           id={id}
           className={`${inputStyle} shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border-gray-300`}
           placeholder={placeholder}
-          onChange={() => settext(id)}
+          onChange={() => changetr()}
         />
       </div>
     </div>
   );
+  function changetr(): void {
+    settext(InputEvent.name);
+    console.log("xxx");
+  }
+
 };
+
