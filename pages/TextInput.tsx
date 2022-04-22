@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
 type Props = {
-  lable: string;
-  lableStyle: string;
-  placeholder: string;
-  inputStyle: string;
+  type: string;
+  lable ?: string;
+  lableStyle ?: string;
+  placeholder ?: string;
+  inputStyle ?: string;
   id: string;
 };
 
 export const TextInput = ({
+  type,
   lable,
   placeholder,
   inputStyle,
@@ -26,20 +28,19 @@ export const TextInput = ({
       </label>
       <div className="mt-1">
         <input
-          type="text"
-          name="email"
+          type={type}
           id={id}
+          value={text}
           className={`${inputStyle} shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border-gray-300`}
           placeholder={placeholder}
-          onChange={() => changetr()}
+          // onChange={change}
         />
+        {console.log(id)}
       </div>
     </div>
   );
-  function changetr(): void {
-    settext(InputEvent.name);
-    console.log("xxx");
+  function change(): void {
+    settext(id);
+    console.log(text);
   }
-
 };
-

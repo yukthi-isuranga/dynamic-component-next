@@ -4,6 +4,35 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { GradientText } from './GradientText'
 import { TextInput } from "../pages/TextInput";
+import Examples from "../Components/application-ui/forms/input-groups/inputs_with_shared_borders";
+import { RadioButton } from './RadioButton'
+import { CheckBox } from './CheckBox'
+
+
+const arrayOfObjects = [
+  {
+    checkBoxLable: "aaaa",
+    id: 1,
+    checkBoxId: "xxx1",
+    checkBoxValue: "bbb1",
+    checkBoxName: "cccc1",
+  },
+  {
+    checkBoxLable: "aaaa2",
+    id: 2,
+    checkBoxId: "xxx2",
+    checkBoxValue: "bbb2",
+    checkBoxName: "cccc2",
+  },
+  {
+    checkBoxLable: "aaaa3",
+    id: 3,
+    checkBoxId: "xxx3",
+    checkBoxValue: "bbb3",
+    checkBoxName: "cccc3",
+  },
+];
+
 
 const Home: NextPage = () => {
   return (
@@ -15,21 +44,62 @@ const Home: NextPage = () => {
       </Head>
 
       <div className="grid grid-cols-3 ">
-        <GradientText
+        {/* <GradientText
           text="Yukthi Isuranga"
           h1Style=" col-span-3	"
           textStyle="italic text-9xl	"
-        />
+        /> */}
 
         {/* <textField name="name" placeholder="yukthi isuranga" inputStyle="" /> */}
         <TextInput
+          type="text"
           lable="Full Name"
           placeholder="yukthi isuranga"
           lableStyle="text-xl 	"
           inputStyle="text-xl	"
           id="fname"
         />
+        <TextInput
+          type="number"
+          lable="Phone Number"
+          placeholder="12346789"
+          lableStyle="text-xl 	"
+          inputStyle="text-xl	"
+          id="phone"
+        />
+        <TextInput
+          type="email"
+          lable="Email"
+          placeholder="admin@gmail.com"
+          lableStyle="text-xl 	"
+          inputStyle="text-xl	"
+          id="email"
+        />
+        <TextInput
+          type="number"
+          lable="Phone Number"
+          placeholder="12346789"
+          lableStyle="text-xl 	"
+          inputStyle="text-xl	"
+          id="fname"
+        />
+
+        <RadioButton
+          id="gender"
+          items={["AAA", "BBB", "CCC", "DDD", "EEE"]}
+          lable="Gender"
+          lableStyle="text-xl "
+        />
+
+        <CheckBox
+          items={arrayOfObjects}
+          id="Name"
+          lable="CheckBox"
+          lableStyle="text-xl"
+        />
       </div>
+
+      {/* <Examples/> */}
 
       {/* <main className={styles.main}>
         <h1 className={styles.title}>
