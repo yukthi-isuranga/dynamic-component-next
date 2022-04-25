@@ -1,13 +1,16 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { GradientText } from './GradientText'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import { GradientText } from "./GradientText";
 import { TextInput } from "../pages/TextInput";
-import Examples from "../Components/application-ui/forms/input-groups/inputs_with_shared_borders";
-import { RadioButton } from './RadioButton'
-import { CheckBox } from './CheckBox'
-
+import Examples from "../Components/application-ui/forms/select-menus/simple_custom";
+import { RadioButton } from "./RadioButton";
+import { CheckBox } from "./CheckBox";
+import { SearchField } from "./SearchField";
+import { SearchIcon } from "@heroicons/react/solid";
+import { DropDownList } from "./DropDownList";
+import { ListBox } from "./ListBox";
 
 const arrayOfObjects = [
   {
@@ -33,6 +36,31 @@ const arrayOfObjects = [
   },
 ];
 
+const items = [
+  { id: 1, name: "Wade Cooper" },
+  { id: 2, name: "Arlene Mccoy" },
+  { id: 3, name: "Devon Webb" },
+  { id: 4, name: "Tom Cook" },
+  { id: 5, name: "Tanya Fox" },
+  { id: 6, name: "Hellen Schmidt" },
+  { id: 7, name: "Caroline Schultz" },
+  { id: 8, name: "Mason Heaney" },
+  { id: 9, name: "Claudie Smitham" },
+  { id: 10, name: "Emil Schaefer" },
+];
+
+const ListBoxitems = [
+  { id: 1, name: "Wade Cooper" },
+  { id: 2, name: "Arlene Mccoy" },
+  { id: 3, name: "Devon Webb" },
+  { id: 4, name: "Tom Cook" },
+  { id: 5, name: "Tanya Fox" },
+  { id: 6, name: "Hellen Schmidt" },
+  { id: 7, name: "Caroline Schultz" },
+  { id: 8, name: "Mason Heaney" },
+  { id: 9, name: "Claudie Smitham" },
+  { id: 10, name: "Emil Schaefer" },
+];
 
 const Home: NextPage = () => {
   return (
@@ -55,7 +83,7 @@ const Home: NextPage = () => {
           type="text"
           lable="Full Name"
           placeholder="yukthi isuranga"
-          lableStyle="text-xl 	"
+          lableStyle="block text-sm font-medium text-gray-700 	"
           inputStyle="text-xl	"
           id="fname"
         />
@@ -63,7 +91,7 @@ const Home: NextPage = () => {
           type="number"
           lable="Phone Number"
           placeholder="12346789"
-          lableStyle="text-xl 	"
+          lableStyle="block text-sm font-medium text-gray-700 	"
           inputStyle="text-xl	"
           id="phone"
         />
@@ -71,7 +99,7 @@ const Home: NextPage = () => {
           type="email"
           lable="Email"
           placeholder="admin@gmail.com"
-          lableStyle="text-xl 	"
+          lableStyle="block text-sm font-medium text-gray-700 	"
           inputStyle="text-xl	"
           id="email"
         />
@@ -79,7 +107,7 @@ const Home: NextPage = () => {
           type="number"
           lable="Phone Number"
           placeholder="12346789"
-          lableStyle="text-xl 	"
+          lableStyle="block text-sm font-medium text-gray-700 	"
           inputStyle="text-xl	"
           id="fname"
         />
@@ -88,15 +116,28 @@ const Home: NextPage = () => {
           id="gender"
           items={["AAA", "BBB", "CCC", "DDD", "EEE"]}
           lable="Gender"
-          lableStyle="text-xl "
+          lableStyle="block text-sm font-medium text-gray-700 "
         />
 
         <CheckBox
           items={arrayOfObjects}
           id="Name"
           lable="CheckBox"
-          lableStyle="text-xl"
+          lableStyle="block text-sm font-medium text-gray-700"
         />
+
+        <SearchField
+          lable="Search fields"
+          icon={
+            <SearchIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+          }
+          inputId="id"
+          inputPlaceholder="Yukthi Isuranga"
+        />
+
+        <DropDownList items={items} label="DropDown List" />
+
+        <ListBox lable="List Box" items={ListBoxitems} />
       </div>
 
       {/* <Examples/> */}
@@ -156,6 +197,6 @@ const Home: NextPage = () => {
       </footer> */}
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
